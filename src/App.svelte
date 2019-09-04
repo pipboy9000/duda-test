@@ -5,9 +5,10 @@
 </script>
 
 <style>
-  :global(body, html, p, div) {
+  :global(body, html) {
     padding: 0;
     margin: 0;
+    background: #eeeeee;
   }
 
   .app {

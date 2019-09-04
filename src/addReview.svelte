@@ -34,6 +34,7 @@
     flex-direction: column;
     width: 100%;
     max-width: 600px;
+    margin-top: 30px;
   }
 </style>
 
