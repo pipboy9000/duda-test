@@ -8,10 +8,10 @@
   :global(body, html, p, div) {
     padding: 0;
     margin: 0;
-    background: #eeeeee;
   }
 
   .app {
+    background: #eeeeee;
     display: flex;
     align-items: center;
     flex-direction: column;
