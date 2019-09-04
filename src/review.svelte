@@ -2,7 +2,7 @@
   import Icon from "fa-svelte";
   import { faPen } from "@fortawesome/free-solid-svg-icons/faPen";
   import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
-  import { reviews } from "./store.js";
+  import { reviews, editing } from "./store.js";
 
   export let review;
 
@@ -16,7 +16,10 @@
     });
   }
 
-  function editReview() {}
+  function editReview() {
+    let editIdx = $reviews.indexOf(review);
+    editing.set(editIdx);
+  }
 </script>
 
 <style>
@@ -30,6 +33,7 @@
     border-radius: 3px;
     overflow: hidden;
     margin-bottom: 20px;
+    box-shadow: 0px 2px 4px #00000047;
   }
 
   .icons {
@@ -63,9 +67,6 @@
     margin-left: 15px;
   }
 
-  .name {
-  }
-
   .text {
     font-size: 15px;
     color: gray;
@@ -80,7 +81,7 @@
   </div>
 
   <div class="icons">
-    <div class="icon">
+    <div class="icon" on:click={editReview}>
       <Icon icon={faPen} />
     </div>
     <div class="icon" on:click={deleteReview}>

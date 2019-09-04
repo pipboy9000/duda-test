@@ -1,6 +1,7 @@
 <script>
-  import { reviews } from "./store";
+  import { reviews, editing } from "./store";
   import AddReview from "./addReview.svelte";
+  import EditReview from "./editReview.svelte";
   import Review from "./review.svelte";
 </script>
 
@@ -31,6 +32,10 @@
     <Review {review} />
   {/each}
 
-  <AddReview />
+  {#if $editing == null}
+    <AddReview />
+  {:else}
+    <EditReview />
+  {/if}
 
 </div>
