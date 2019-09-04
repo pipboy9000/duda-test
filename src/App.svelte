@@ -1,0 +1,35 @@
+<script>
+  import { reviews } from "./store";
+  import AddReview from "./addReview.svelte";
+  import Review from "./review.svelte";
+</script>
+
+<style>
+  :global(body, html, p, div) {
+    padding: 0;
+    margin: 0;
+    background: #eeeeee;
+  }
+
+  .app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-family: "Roboto Slab", serif;
+    color: #839cbc;
+  }
+</style>
+
+<div class="app">
+  <h1>Reviews</h1>
+  {#each $reviews as review, i}
+    <Review {review} />
+  {/each}
+
+  <AddReview />
+
+</div>
