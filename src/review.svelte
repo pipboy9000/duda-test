@@ -3,15 +3,24 @@
   import { faPen } from "@fortawesome/free-solid-svg-icons/faPen";
   import { faTrash } from "@fortawesome/free-solid-svg-icons/faTrash";
   import { reviews, editing } from "./store.js";
+  import { setReviews } from "./localStorage";
 
   export let review;
 
   function deleteReview() {
     reviews.update(reviews => {
       let rmIdx = reviews.indexOf(review);
+
+      if (rmIdx == $editing) {
+        editing.set(null);
+      }
+
       if (rmIdx > -1) {
         reviews.splice(rmIdx, 1);
       }
+
+      setReviews(JSON.stringify(reviews));
+
       return reviews;
     });
   }
