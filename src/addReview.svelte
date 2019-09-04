@@ -29,11 +29,16 @@
 </script>
 
 <style>
-
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+  }
 </style>
 
 <div class="form">
-  <input type="text" class="name" bind:value={name} />
-  <textarea class="text" bind:value={text} />
+  <input type="text" class="name" bind:value={name} placeholder="Name:" />
+  <textarea class="text" bind:value={text} placeholder="Add your review..." />
   <button on:click={submit}>Submit</button>
 </div>
