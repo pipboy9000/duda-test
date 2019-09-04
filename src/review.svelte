@@ -36,7 +36,7 @@
     font-family: "Poppins", sans-serif;
     background: white;
     width: 100%;
-    max-width: 600px;
+    max-width: 640px;
     display: flex;
     position: relative;
     border-radius: 3px;

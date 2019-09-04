@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 600px;
+    max-width: 640px;
     margin-top: 30px;
   }
 </style>
